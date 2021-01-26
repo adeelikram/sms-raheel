@@ -1,0 +1,118 @@
+<html>
+ <head><title>Admin</title>
+ <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+ <meta name="generator" content="Jekyll v3.8.5">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ </head> 
+ <body>
+     <center> <img class="img-fluid" src="../imgs/s.png" alt=""></center>
+      <div class="container" style="background-color: #526069;">
+
+     
+         <center><h1 class="lbl">Menu</h1></center>
+         <div class="list-group" style="text-align:center">
+         
+        <center> <button type="button" style="width:20rem;" class="list-group-item list-group-item-action" id="btn_del" onclick="deleted()" onmouseover="style.backgroundColor='skyblue'"  onmouseout="style.backgroundColor='white'">
+          <b>Delete Student</b></button>
+          <button type="button" style="width:20rem;" class="list-group-item list-group-item-action" id="btn_cng" onclick="change()" onmouseover="style.backgroundColor='skyblue'"  onmouseout="style.backgroundColor='white'">
+          <b>Change Student Data</b></button></center>
+          <br>
+        </div>
+       
+       
+        <div id="cng" hidden>             
+          <center>  <form action="/Admin/Modify.html" method="POST" >        
+             <table class="table table-bordered text-center w-50">            
+               <tr><td><Label><span style="font-size:125%;color: white"><i>Current ID</i></span></Label></td><td><input type="text" required name="cng_id" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr>
+               <tr><td><Label><span style="font-size:125%;color: white"><i>Current Class</i></span></Label></td>
+                <td>
+                  <select name="cng_class" class="form-control w-75" style="margin-left:6.3%">
+                  <option value="Nursery">Nursery</option> 
+                  <option value="Prep">Prep</option>
+                  <option value="Class1">One</option>
+                  <option value="Class2">Two</option>
+                  <option value="Class3">Three</option>
+                  <option value="Class4">Four</option>
+                  <option value="Class5">Five</option>
+                  <option value="Class6">Sixth</option>
+                  <option value="Class7">Seventh</option>
+                  <option value="Class8">Eighth</option>
+                  <option value="Class9">Nineth</option>
+                  <option value="Class10">Tenth</option>
+                  <option value="Class11">Eleventh</option>
+                  <option value="Class12">Twelveth</option>
+                </select>
+                 
+              </td></tr>
+               <tr><td><Label><span style="font-size:125%;color: white"><i>New Name</i></span></Label></td><td><input type="text" required name="cng_name" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr>
+               <tr><td><Label><span style="font-size:125%;color: white"><i>New Father Name</i></span></Label></td><td><input type="text" required name="cng_father" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr>
+               <tr><td><Label><span style="font-size:125%;color: white"><i>New Address</i></span></Label></td><td><input type="text" required name="cng_address" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr>
+               <tr><td><Label><span style="font-size:125%;color: white"><i>New Cellno</i></span></Label></td><td><input type="text" required name="cng_cellno" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr> 
+        </table>
+         <button type="submit" name="btn_cng_1" class="btn btn-primary" style="margin-top: 1rem;">Proceed</button>
+         <br><br>
+        </form></center>
+       </div>
+       
+       <div style="background-color: #526069;" id="del" hidden>             
+        <center><form action="/Admin/Modify.html" method="POST" >        
+        <table class="table table-bordered text-center w-50">            
+       <tr><td><Label><span style="font-size:125%;color: white"><i>Enter ID</i></span></Label></td><td><input type="text" required name="del_id" class="form-control w-75" style="margin-left:1rem;text-align:center"></td></tr>
+       <tr><td><Label><span style="font-size:125%;color: white"><i>Class Name</i></span></Label></td><td> 
+         <select name="del_class" class="form-control w-75" style="margin-left:5.7%">
+          <option value="Nursery">Nursery</option> 
+          <option value="Prep">Prep</option>
+          <option value="Class1">One</option>
+          <option value="Class2">Two</option>
+          <option value="Class3">Three</option>
+          <option value="Class4">Four</option>
+          <option value="Class5">Five</option>
+          <option value="Class6">Sixth</option>
+          <option value="Class7">Seventh</option>
+          <option value="Class8">Eighth</option>
+          <option value="Class9">Nineth</option>
+          <option value="Class10">Tenth</option>
+          <option value="Class11">Eleventh</option>
+          <option value="Class12">Twelveth</option>
+        </select></td></tr>
+      </table>
+      <button type="submit" name="btn_del_1" class="btn btn-primary" style="margin-top: 1rem;">Proceed</button>
+     </form>
+     <br><br>
+    </center>
+     </div>
+
+    </div>
+      
+    <script>
+      function deleted(){
+          document.getElementById('btn_del').hidden=true;
+          document.getElementById('btn_cng').hidden=true;
+          document.getElementById('del').hidden=false;
+      }
+      function change(){
+        document.getElementById('btn_del').hidden=true;
+          document.getElementById('btn_cng').hidden=true;
+          document.getElementById('cng').hidden=false;
+      }
+    </script>
+
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+       $('.lbl').hide();
+       $('.list-group').hide();
+       $("#image").hide();
+       $('.lbl').show(1300)
+       $('.list-group').show(1300);
+       $("#image").show(1300);
+       $('#h').text(((new Date()).getDate())); 
+      })
+        
+      </script>   
+  </body>
+</html>

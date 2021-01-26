@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../libs/fontawesome/css/all.min.css"/>
+    <link rel="stylesheet" href="../styles/login.css"/>
+</head>
+<body>
+    
+    <form action="/public_Attend/public_Attend.html" class="form-signin" method="POST">
+        <center>
+          <img class="mb-4" src="../imgs/sms.jpg" alt="" width="120" height="120"/>
+        </center>
+        <h1 class="h3 mb-3 font-weight-normal">Select The Date</h1>
+        <input type="text" name="name" id="" value="<%=name%>" hidden/>
+        <select name="date" class="form-control">
+           <%for(var i=db.length-1;i>=0;i--) {%>
+          <option value="<%=db[i].name%>"><%=db[i].name%></option>
+          <%}%>
+        </select>
+        
+        
+          
+        </div>
+        <button class="btn btn-lg btn-outline-primary btn-block"  name="btn">Proceed</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+      </form>
+</body>
+</html>

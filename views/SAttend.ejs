@@ -1,0 +1,56 @@
+<html ng-app>
+ <head><title>Admin</title>
+ <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+ <meta name="generator" content="Jekyll v3.8.5">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+  <body>
+     
+<div class="container">
+        <center><img class="img-fluid" src="../imgs/s.png" alt=""></center>
+     
+      <div class="people" style="background-color:darkgray">
+     <br><br><br>
+     <center><h1 class="lbl"> <%=val%> Class Students</h1>
+       
+          
+         <form action='/Admin/Attendence.html' method='POST'>
+         <input type='hidden' value='<%=val%>' name="class">
+         <input type='hidden' value='<%=date%>' name="date">
+         <input type='hidden' value='<%=month+1%>' name="month">
+         <input type='hidden' value='<%=year%>' name="year">
+         
+         <table class="table table-bordered text-center w-50">
+          
+          <b><i>Date:<%=year%>/<%=month+1%>/<%=date%></i></b>
+          <tr style="border:1px solid black;">
+             <th class='head'>ID</th><th class='head'>Name</th><th class='head'>Present</th><th class='head'>Absent</th><th class="head">Leave</th>
+           </tr>
+           <% for(var i=0;i<db.length;i++) {%>   
+           <tr style="border:0px solid black">
+           
+            <td class="column"><%=db[i]._id%></td><td class="column"><%=db[i].name%></td>
+            <td class="column"><input type='checkbox' name="p<%=i%>" ng-disabled='a<%=i%> || l<%=i%>'  ng-model="p<%=i%>" value="Present" /></td>
+            <td class="column"><input type='checkbox' name="a<%=i%>" ng-disabled='p<%=i%> || l<%=i%>'  ng-model="a<%=i%>" value="Absent"/></td>
+            <td class="column"><input type='checkbox' name="l<%=i%>" ng-disabled='a<%=i%> || p<%=i%>'  ng-model="l<%=i%>" value="Leave"/></td>  
+             
+           </tr>
+           <%}%>
+         </table> 
+         <input type='submit' name="btn13" class="btn btn-primary" value="Proceed">
+         </form>
+      </center>  
+      </div>
+    </div>    
+      <script src="../node_modules/angular/angular.min.js">
+      </script>
+      <script>
+      
+      
+      </script>
+  </body>
+</html>

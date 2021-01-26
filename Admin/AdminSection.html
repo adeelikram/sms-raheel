@@ -1,0 +1,59 @@
+<html>
+ <head><title>Admin</title>
+ 
+  <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+ <!--<link rel="stylesheet" href="../styles/Admin.css">-->
+ 
+ 
+  <body>
+       <center>   
+      <img class="img-fluid" src="../imgs/s.png" alt="" style="height:9%">
+       </center>
+      <center> 
+      <div class="jumbotron ">
+      <label class="text-primary" style="margin-left:-55%;margin-top:-3%"><h3>Cautions</h3></label>
+      <ol class="list-group w-75" style="margin-left:5%">
+        <li class="list-group-item"><label>1. Promotion of students should start from last</label></li>
+        <li class="list-group-item"><label>2. Don't Share Password of Admin section with anyone</label></li>
+        <li class="list-group-item"><label>3. Delete Student Record On your Own Risk</label></li>
+         </ol>
+        <center><h2 class="lbl"><i>Menu</i></h2></center>
+         <center>
+         <div class="list-group" style="text-align:center;">
+           <center>
+          <button type="button" class="list-group-item list-group-item-action w-50 bg-light" onmouseover="style.backgroundColor='brown'"  onmouseout="style.backgroundColor='white'" onclick="window.location.href='./StudentData.html'">
+          <b>Show All Student Data</b></button>
+          <button type="button" class="list-group-item list-group-item-action w-50 bg-light" onmouseover="style.backgroundColor='brown'"  onmouseout="style.backgroundColor='white'" onclick="window.location.href='./Promote.html'">
+          <b>Promote Student To next Class</b></button>
+          <button type="button" class="list-group-item list-group-item-action w-50 bg-light" onmouseover="style.backgroundColor='brown'"  onmouseout="style.backgroundColor='white'" onclick="window.location.href='./Attendence.html'">
+          <b>Mark Attendence<b></b></button>
+          <button type="button" class="list-group-item list-group-item-action w-50 bg-light" onmouseover="style.backgroundColor='brown'"  onmouseout="style.backgroundColor='white'" onclick="window.location.href='./Modify.html'">
+            <b>Modify Student Record</b>
+          </button> 
+          </center>           
+        </div>
+        
+      </div>
+      </center>
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+       $('.lbl').hide();
+       $('.list-group').hide();
+       $("#image").hide();
+       $('.lbl').show(1300)
+       $('.list-group').show(1300);
+       $("#image").show(1300);
+       $('#h').text(((new Date()).getDate())); 
+      })
+        
+      </script>   
+  </body>
+</html>

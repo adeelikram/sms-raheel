@@ -1,0 +1,121 @@
+
+
+<html lang="en" xmlns="www.google.com">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>School Management System</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  
+  <script src="../libs/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../node_modules/angular/angular.min.js"></script>
+	<!-- Custom styles for this template -->
+	<style>
+	@media only screen and (max-width:600px)
+	{
+        #cont{
+           display:none;
+		}
+		.Tan{
+            margin: 1px;
+            height: 30%;
+            width: 100%;
+        }
+	};
+    
+	</style>
+</head>
+
+<body>
+	
+       
+      <br>
+       <center>
+              <p class="h4"><i>Enter the Required Information</i></p>
+              <form   action="/Admissions/new-Admission.html" method="POST" ng-app="Rahil" ng-controller="ctrl">
+                
+<label for="" class="lead" id="lbl_in">Number Of Student </label><input type="text" style="padding-left:5px;text-align:center" ng-model="value" id="in"  name="in"><br>
+                    <button ng-click="check()" onclick="hide()" class="btn btn-primary" id="btn_in">Proceed</button>
+                    <div hidden id="table">   
+                    <table  style="text-align:center;" >
+                                <tr class="text"><th>Name</th><th>Father</th><th>Address</th><th>Cellno</th><th>Class</th></tr>
+                                 <tr ng-if="value" ng-repeat="x in arr">
+                                         <td><input  required class="Tan" type="text" name="n{{x}}" style="text-align:center"></td>
+                                         <td><input required type="text" required class="Tan" name="f{{x}}" style="text-align:center"></td>
+                                         <td><input required type="text" required class="Tan" name="a{{x}}" style="text-align:center"></td>
+                                         <td><input required type="text" required class="Tan" name="cel{{x}}" style="text-align:center"></td>
+                                         <td>
+                                           <select name="cl{{x}}" class="form-control w-100">
+                                             <option value="Nursery">Nursery</option>
+                                             <option value="Prep">Prep</option>
+                                             <option value="Class1">1<sup>st</sup></option>
+                                             <option value="Class2">2<sup>nd</sup></option>
+                                             <option value="Class3">3<sup>rd</sup></option>
+                                             <option value="Class4">4<sup>th</sup></option>
+                                             <option value="Class5">5<sup>th</sup></option>
+                                             <option value="Class6">6<sup>th</sup></option>
+                                             <option value="Class7">7<sup>th</sup></option>
+                                             <option value="Class8">8<sup>th</sup></option>
+                                             <option value="Class9">9<sup>th</sup></option>
+                                             <option value="Class10">10<sup>th</sup></option>
+                                             <option value="Class11">11<sup>th</sup></option>
+                                             <option value="Class12">12<sup>th</sup></option>
+                                           </select>
+                                         </td>
+                                 </tr> 
+                             </table>
+                             <input class="btn btn-secondary btn-lg" type="submit" id="btn" name="btn">        
+                             <br><br><br> <p style="color:red;padding-left:3rem">Write <b>Class</b> And <b>Prep</b> for baisc classes</p>      
+                            </div>         
+                
+                     
+        
+            </form>
+
+            <script>
+                    function hide(){
+                     document.getElementById('table').hidden=false;   
+                     document.getElementById('lbl_in').hidden=true;
+                     document.getElementById('in').hidden=true;
+                     document.getElementById('btn_in').hidden=true;
+                    } 
+                 angular.module('Rahil',[]).controller('ctrl',function($scope){
+                  $scope.check=function(){
+                    var val=parseInt($scope.value);
+                    var array=[];
+                    for(var i=0;i<val;i++)
+                    {
+                        array.push(i);
+                    }
+                   $scope.arr=array; 
+                  }
+                })
+                 </script>
+                 
+                  
+                  <script>
+                   window.onload=function()   
+                   {$(document).ready(function(){
+                      $('body').hide()
+                       $('body').show(1000);
+                   })}
+                  </script>
+         
+
+
+
+       </center>
+   
+	
+	
+	<!-- Scripts -->
+	
+</body>
+</html>

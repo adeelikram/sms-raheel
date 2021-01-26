@@ -1,0 +1,63 @@
+<html>
+ <head><title>Admin</title>
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+   <meta name="generator" content="Jekyll v3.8.5">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+ 
+ 
+ <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+  <body>
+    
+    <center><img src="../imgs/s.png" alt="" class="img-fluid">
+      
+     <div class="jumbotron" style="margin-left:8%;margin-right:8%">
+     <center><p class="h1">Classes</p></center>
+                 
+     <center>
+         <form action="/Admin/StudentData.html" method="POST" class="form-group w-25">
+            
+          <select name="class" class="form-control" style="background-color:lightblue;font-size:large">
+            <option value="Nursery">Nursery</option> 
+            <option value="Prep">Prep</option>
+            <option value="Class1">One</option>
+            <option value="Class2">Two</option>
+            <option value="Class3">Three</option>
+            <option value="Class4">Four</option>
+            <option value="Class5">Five</option>
+            <option value="Class6">Sixth</option>
+            <option value="Class7">Seventh</option>
+            <option value="Class8">Eighth</option>
+            <option value="Class9">Nineth</option>
+            <option value="Class10">Tenth</option>
+            <option value="Class11">Eleventh</option>
+            <option value="Class12">Twelveth</option>
+          </select>
+          
+            <button type="submit" class="btn btn-primary lg" style="font-size:125%;margin-top:2%"><i>Proceed</i></button>
+        </form>                                  
+      </center>                  
+        
+      </div>
+    </div>
+  </center>
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+       $('.lbl').hide();
+       $('.list-group').hide();
+       $("#image").hide();
+       $('.lbl').show(1300)
+       $('.list-group').show(1300);
+       $("#image").show(1300);
+       
+      })
+
+      </script>   
+
+  </body>
+</html>

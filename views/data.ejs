@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../libs\bootstrap\css\bootstrap.css">
+  <title>Student Data</title>
+  <style>
+  @media screen and (max-width:600px)
+  {
+    #image{
+       width:70%;
+       height:7%;
+      }
+  };
+  @media screen and (min-width:700px)
+  {
+    .table table table-bordered{
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
+  </style>
+</head>
+<body>
+    
+    <center><div class="block"><img id="image" src="../imgs/s.png" alt=""></div></center>
+    <div class="people">
+   <br><br><br>
+   <center><h1 class="lbl"> <%=name%> Class Students</h1>
+         
+        <table class="table table-bordered w-50" style="text-align:center">
+        
+        
+        <tr>
+           <th class='head'>ID</th><th class='head'>Name</th><th class='head'>Father</th><th class='head'>Address</th><th class="head">CellNo</th>
+         </tr>
+         <%for(var i=0;i<db.length;i++) {%>   
+         <tr style="border:0px solid black">
+         
+          <td><%=db[i]._id%></td><td><%=db[i].name%></td><td><%=db[i].father%></td><td ><%=db[i].address%></td><td ><%=db[i].cellno%></td>  
+           
+         </tr>
+         <%}%>
+       </table> 
+    </center>  
+    </div>
+  
+</body>
+</html>

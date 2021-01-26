@@ -1,0 +1,90 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{
+    text-align: center;
+    place-content: center;
+  }
+  #lan{
+    margin-left:25%;
+    margin-right:25%;
+    text-align: center;
+    background-color: lightblue;
+    
+  }
+  #time{
+    color:blue;
+  }
+.loader {
+  margin-left: 30%;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+@media screen and (max-width:600px)
+    {
+      #image{
+         width:70%;
+         height:7%;
+        }
+    };
+    @media screen and (min-width:700px)
+    {
+      .table table table-bordered{
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    }
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+<link rel="stylesheet" href="../styles/Admin.css">
+<link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Jekyll v3.8.5">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <center><div class="block"><img id="image" src="../imgs/s.png" alt=""></div></center>
+
+<div id="lan">
+<p class="h4"><br><br>The Page will be redirect in <span id="time"></span>s...</p>
+<div class="loader"></div>
+</div>
+<script>
+window.onload=()=>
+ {
+  var t=setInterval(time,1000);
+  var i=5;
+  function time(){
+    
+    document.getElementById('time').innerHTML=i;
+    i=i-1;
+    if(i==0){
+      window.location.href="../Admin/AdminSection.html";
+      clearInterval(t);
+    }
+  }
+ 
+}
+</script>
+</body>
+</html>
